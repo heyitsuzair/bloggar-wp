@@ -23,5 +23,6 @@ class BLOGGAR_WP
          */
         Assets::get_instance();
         Theme_Supports::get_instance();
+        Nav_Menus::get_instance();
     }
 }
