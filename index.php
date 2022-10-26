@@ -1,2 +1,6 @@
 <?php
-echo 'Hello World';
+get_header();
+?>
+<?php
+get_footer();
+?>

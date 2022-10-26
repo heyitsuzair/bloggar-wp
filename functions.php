@@ -2,7 +2,7 @@
 
 /**
  * Theme Functions
- * @package aquila
+ * @package Bloggar_WP
  */
 
 if (!defined('BLOGGAR_WP_DIR_PATH')) {
@@ -13,9 +13,9 @@ if (!defined('BLOGGAR_DIR_URI')) {
 }
 require_once BLOGGAR_WP_DIR_PATH . './inc/helpers/autoloader.php';
 
-// function aquila_get_theme_instance()
-// {
-//     \AQUILA_THEME\Inc\AQUILA_THEME::get_instance();
-// }
+function bloggar_get_theme_instance()
+{
+    \BLOGGAR_WP\Inc\BLOGGAR_WP::get_instance();
+}
 
-// aquila_get_theme_instance();
+bloggar_get_theme_instance();
