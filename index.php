@@ -14,22 +14,23 @@ get_header();
     <?php
     if (have_posts()) {
     ?>
-    <div class="row">
+    <div class="blog-content">
         <?php
             if (is_home() && !is_front_page()) {
-
             ?>
-        <h1 class="page-title">
+        <h1 class="page-title text-center my-2">
             <?php single_post_title() ?>
         </h1>
-        <div class="content">
+        <div class="content my-3">
             <?php
+                    $is_post_first = true;
                     while (have_posts()) : the_post();
 
                     ?>
-            <?php get_template_part('template-parts/content.php'); ?>
+            <?php $is_post_first ? get_template_part('template-parts/content-first-post') : get_template_part('template-parts/content'); ?>
 
             <?php
+                        $is_post_first = false;
                     endwhile
                     ?>
         </div>
