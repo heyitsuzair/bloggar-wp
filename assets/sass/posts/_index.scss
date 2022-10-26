@@ -1,19 +1,28 @@
 .first-post{
     width: 80%;
     height: 70%;
-    border-radius: 20px;
+    border-radius: $border-radius-md;
     overflow: hidden;
-    .post-thumbnail-parent{
-        img{
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transform: scale(1);
-            transition: transform .4s;
-            border-radius: 20px;
-            &:hover{
-                transform: scale(1.1);
-            }
+}
+.post-thumbnail-parent{
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: scale(1);
+        transition: transform .4s;
+        border-radius: $border-radius-md;
+        &.active{
+            transform: scale(1.1);
         }
+    }
+}
+.blog-post-title{
+    font-weight: 700;
+}
+.post-title-link{
+    text-decoration: none;
+    .blog-post-title{
+        color: $dark_green;
     }
 }
