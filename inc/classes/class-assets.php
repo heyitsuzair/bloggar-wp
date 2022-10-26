@@ -19,7 +19,7 @@ class Assets
     {
 
         /**
-         @get_instance(): To Load Classes
+         * Setting Up Hooks
          */
         $this->setup_hooks();
     }
@@ -43,10 +43,16 @@ class Assets
          */
         wp_register_style('bootstrap_css', BLOGGAR_WP_DIR_URI . '/assets/libraries/bootstrap.min.css', [], false, 'all');
 
+        wp_register_style('style_css', BLOGGAR_WP_DIR_URI . '/style.css', [], false, 'all');
+
+        wp_register_style('index_css', BLOGGAR_WP_DIR_URI . '/assets/sass/index.css', [], filemtime(BLOGGAR_WP_DIR_PATH . '/assets/sass/index.css'), 'all');
+
         /**
          * Enqueuing CSS
          */
         wp_enqueue_style('bootstrap_css');
+        wp_enqueue_style('style_css');
+        wp_enqueue_style('index_css');
     }
     public function register_scripts()
     {

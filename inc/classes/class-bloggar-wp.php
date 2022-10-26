@@ -22,5 +22,6 @@ class BLOGGAR_WP
          @get_instance(): To Load Classes
          */
         Assets::get_instance();
+        Theme_Supports::get_instance();
     }
 }
