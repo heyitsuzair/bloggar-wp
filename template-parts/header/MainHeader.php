@@ -24,9 +24,18 @@
             ?>
         </div>
         <div class="right col-md-8 col-sm-8 col-lg-8 col-xs-8 d-flex align-items-center">
-            <ul class="mb-0 list-unstyled">
+            <ul class="mb-0 list-unstyled d-flex justify-content-evenly">
                 <li>
                     <a class="header-link active nav-link fw-bold" href="#">Home</a>
+                </li>
+                <li>
+                    <a class="header-link nav-link fw-bold" href="#">Contact</a>
+                </li>
+                <li>
+                    <a class="header-link nav-link fw-bold" href="#">About</a>
+                </li>
+                <li>
+                    <a class="header-link nav-link fw-bold" href="#">Services</a>
                 </li>
             </ul>
         </div>

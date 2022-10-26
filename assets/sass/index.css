@@ -28,4 +28,7 @@
 .main-header .right .header-link:hover:after {
   opacity: 1;
   transform: translateY(0);
+}
+.main-header .right ul {
+  width: 100%;
 }/*# sourceMappingURL=index.css.map */
