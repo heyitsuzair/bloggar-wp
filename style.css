@@ -17,3 +17,6 @@ Text Domain: bloggar_wp
   margin: 0;
   padding: 0;
 }
+body {
+  color: #1b4043;
+}
