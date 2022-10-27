@@ -64,12 +64,15 @@ class Assets
          */
         wp_register_script('bootstrap_js', BLOGGAR_WP_DIR_URI . '/assets/libraries/bootstrap.bundle.min.js', ['jquery'], false, true);
 
-        wp_register_script('index_js', BLOGGAR_WP_DIR_URI . '/assets/js/posts/index.js', ['jquery'], filemtime(BLOGGAR_WP_DIR_PATH . '/assets/js/posts/index.js'), true);
+        wp_register_script('post_js', BLOGGAR_WP_DIR_URI . '/assets/js/posts/index.js', ['jquery'], filemtime(BLOGGAR_WP_DIR_PATH . '/assets/js/posts/index.js'), true);
+
+        wp_register_script('header_js', BLOGGAR_WP_DIR_URI . '/assets/js/header/index.js', ['jquery'], filemtime(BLOGGAR_WP_DIR_PATH . '/assets/js/header/index.js'), true);
 
         /**
          * Enqueuing JS
          */
         wp_enqueue_script('bootstrap_js');
-        wp_enqueue_script('index_js');
+        wp_enqueue_script('post_js');
+        wp_enqueue_script('header_js');
     }
 }

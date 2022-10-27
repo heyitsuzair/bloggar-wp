@@ -53,7 +53,9 @@
                         aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
-                    <?php wp_nav_menu(['theme_location' => 'bloggar_header_menu']); ?>
+                    <?php wp_nav_menu([
+                        'theme_location' => 'bloggar_header_menu',
+                    ]); ?>
                 </div>
             </div>
         </div>

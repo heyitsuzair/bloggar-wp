@@ -1,43 +1,7 @@
-// .main-header{
-//     .right{
-//         .header-link{
-//             position: relative;
-
-//             &.active::after{
-//                 background: $color_primary;
-//                 content: "";
-//                 display: block;
-//                 height: 4px;
-//                 opacity: 1;
-//                 position: absolute;
-//                 bottom: -26px;
-//                 transition: all .2s;
-//                 transform: translateY(0);
-//                 width: 100%;
-//             }
-//             &::after{
-//                 background: $color_primary;
-//                 content: "";
-//                 display: block;
-//                 height: 4px;
-//                 opacity: 0;
-//                 position: absolute;
-//                 bottom: -26px;
-//                 transition: all .2s;
-//                 transform: translateY(100%);
-//                 width: 100%;
-//             }
-//             &:hover:after{
-//                 opacity: 1;
-//                 transform: translateY(0);
-//             }
-//         }
-//        ul{
-//         width: 100%;
-//        }
-//     }
-// }
-.main-header .desktop-right .menu-header-menu-container{
+.main-header  {
+    .desktop-right{
+        .menu-header-menu-container{
+ 
     width: 100%;
 
     ul{
@@ -108,4 +72,57 @@
             }
         }
     }
+    }
+}
+    .mobile-right{
+        .menu-header-menu-container{
+ 
+    width: 100%;
+
+    ul{
+        list-style: none;
+        li{
+            a{
+                text-decoration: none;
+                color: black;
+                font-weight: 600;
+                position: relative;
+              
+            }
+        }
+    }
+    #menu-header-menu-1{
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 0;
+        gap: 3rem;
+        padding-left: 0;
+
+        .menu-item{
+        width: 100%;
+        padding: 1rem;
+  
+        }
+
+        .menu-item-has-children{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+            .sub-menu{
+                position: absolute;
+                top: 3rem;
+                left: -1rem;
+                display: none;
+                flex-direction: column;
+                &.active{
+                    display: flex;
+                }
+            }
+        }
+    }
+    }
+}
 }

@@ -74,6 +74,47 @@
 .main-header .desktop-right .menu-header-menu-container #menu-header-menu .menu-item-has-children:hover .sub-menu {
   display: flex;
 }
+.main-header .mobile-right .menu-header-menu-container {
+  width: 100%;
+}
+.main-header .mobile-right .menu-header-menu-container ul {
+  list-style: none;
+}
+.main-header .mobile-right .menu-header-menu-container ul li a {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+  position: relative;
+}
+.main-header .mobile-right .menu-header-menu-container #menu-header-menu-1 {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 0;
+  gap: 3rem;
+  padding-left: 0;
+}
+.main-header .mobile-right .menu-header-menu-container #menu-header-menu-1 .menu-item {
+  width: 100%;
+  padding: 1rem;
+}
+.main-header .mobile-right .menu-header-menu-container #menu-header-menu-1 .menu-item-has-children {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+.main-header .mobile-right .menu-header-menu-container #menu-header-menu-1 .menu-item-has-children .sub-menu {
+  position: absolute;
+  top: 3rem;
+  left: -1rem;
+  display: none;
+  flex-direction: column;
+}
+.main-header .mobile-right .menu-header-menu-container #menu-header-menu-1 .menu-item-has-children .sub-menu.active {
+  display: flex;
+}
 
 .first-post {
   width: 80%;
