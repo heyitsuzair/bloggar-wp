@@ -22,17 +22,20 @@ get_header();
             <?php single_post_title() ?>
         </h1>
         <div class="content my-3">
-            <?php
-                    $is_post_first = true;
-                    while (have_posts()) : the_post();
+            <div class="row">
+                <?php
+                        $is_post_first = true;
+                        while (have_posts()) : the_post();
 
-                    ?>
-            <?php $is_post_first ? get_template_part('template-parts/content-first-post') : get_template_part('template-parts/content'); ?>
+                        ?>
+                <div class="col-md-4">
+                    <?php get_template_part('template-parts/content'); ?>
+                </div>
 
-            <?php
-                        $is_post_first = false;
-                    endwhile
-                    ?>
+                <?php
+                        endwhile;
+                        ?>
+            </div>
         </div>
         <?php
             }

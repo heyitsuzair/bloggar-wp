@@ -12,6 +12,6 @@
     <?php
     get_template_part('template-parts/components/first-post/entry-header');
     get_template_part('template-parts/components/first-post/entry-content');
-    get_template_part('./template-parts/components/first-post/entry-footer');
+    get_template_part('template-parts/components/first-post/entry-footer');
     ?>
 </article>

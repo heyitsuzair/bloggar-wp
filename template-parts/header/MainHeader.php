@@ -25,20 +25,7 @@
         </div>
         <div
             class="desktop-right col-md-8 col-sm-8 col-lg-8 col-xs-8 d-none d-md-flex d-lg-flex d-xl-flex align-items-center">
-            <!-- <ul class="mb-0 list-unstyled d-flex justify-content-evenly">
-                <li>
-                    <a class="header-link active nav-link fw-bold" href="#">Home</a>
-                </li>
-                <li>
-                    <a class="header-link nav-link fw-bold" href="#">Contact</a>
-                </li>
-                <li>
-                    <a class="header-link nav-link fw-bold" href="#">About</a>
-                </li>
-                <li>
-                    <a class="header-link nav-link fw-bold" href="#">Services</a>
-                </li>
-            </ul> -->
+
             <?php wp_nav_menu(['theme_location' => 'bloggar_header_menu']); ?>
         </div>
         <div class="mobile-right col-sm-8 col-xs-8 d-lg-none justify-content-end d-xs-flex d-sm-flex d-md-none">
