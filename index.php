@@ -46,7 +46,11 @@ get_header();
                         endwhile ?>
             </div>
         </div>
+        <div class="next-prev-links mt-5">
+            <?php bloggar_numeric_posts_nav(); ?>
+        </div>
     </div>
+
     <?php
             }
         } else {

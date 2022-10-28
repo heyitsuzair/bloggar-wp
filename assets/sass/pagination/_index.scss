@@ -1,0 +1,25 @@
+.next-prev-links{
+    .navigation{
+        ul{
+            display: flex;
+            list-style: none;
+            gap: 1rem;
+    li{
+        border: 1px solid $color_primary;
+        border-radius: 5px;
+        cursor: pointer;
+        a{
+            text-decoration: none;
+            color: $dark_green;
+            padding: 1rem;
+        }
+        &.active{
+            background-color: $color_primary;
+            a{
+                color: white;
+            }
+        }
+    }
+        }
+    }
+}
