@@ -187,6 +187,13 @@
   color: white;
 }
 
+.attachment-single-post-thumbnail {
+  width: 100%;
+  height: 50vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .td-none {
   text-decoration: none;
   color: #1b4043;
