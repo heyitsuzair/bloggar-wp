@@ -11,7 +11,7 @@ function bloggar_the_excerpt($trim_char_count = 0)
     $excerpt = substr($excerpt, 0, $trim_char_count);
     $excerpt = substr($excerpt, 0, strrpos($excerpt, ''));
 
-    echo $excerpt . '...';
+    return $excerpt . '...';
 }
 function bloggar_excerpt_more($more = '')
 {

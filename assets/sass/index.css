@@ -194,6 +194,10 @@
      object-fit: cover;
 }
 
+.content-container {
+  max-width: 800px;
+}
+
 .td-none {
   text-decoration: none;
   color: #1b4043;
