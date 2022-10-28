@@ -50,7 +50,7 @@
                 background-color: white;
                 animation: a .3s ease-in-out forwards;
                 transform-origin: top center;
-                    
+                z-index: 1;
                 li{
                     padding: .5rem 1rem;
                     a{

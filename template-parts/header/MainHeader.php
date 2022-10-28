@@ -18,14 +18,15 @@
             <?php
             } else {
             ?>
-            <h4> <?php echo get_bloginfo('name'); ?> </h4>
+            <a href="<?php echo esc_attr(home_url()); ?>" class="td-none">
+                <h4> <?php echo get_bloginfo('name'); ?> </h4>
+            </a>
             <?php
             }
             ?>
         </div>
         <div
             class="desktop-right col-md-8 col-sm-8 col-lg-8 col-xs-8 d-none d-md-flex d-lg-flex d-xl-flex align-items-center">
-
             <?php wp_nav_menu(['theme_location' => 'bloggar_header_menu']); ?>
         </div>
         <div class="mobile-right col-sm-8 col-xs-8 d-lg-none justify-content-end d-xs-flex d-sm-flex d-md-none">

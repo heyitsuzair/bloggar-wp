@@ -13,10 +13,14 @@ License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bloggar_wp
 */
+
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
 * {
   margin: 0;
   padding: 0;
 }
 body {
   color: #1b4043;
+  font-family: "Poppins", sans-serif;
 }

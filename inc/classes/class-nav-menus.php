@@ -27,7 +27,7 @@ class Nav_Menus
     protected function setup_hooks()
     {
         /**
-         @Hook To Register Nav Menus
+         @Hooks
          */
         add_action('init', [$this, 'register_nav_menus']);
 
@@ -46,7 +46,7 @@ class Nav_Menus
     /**
      * Below Function Is Associate With "walker_nav_menu_start_el" that can insert an element if menu contains submenu
      */
-    function add_sub_menu_arrow($item_output, $item, $depth, $args)
+    public function add_sub_menu_arrow($item_output, $item, $depth, $args)
     {
         if (in_array('menu-item-has-children', $item->classes)) {
             $arrow = ' <i class="fa fa-angle-down"></i>'; // Change the class to your font icon

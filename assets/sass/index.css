@@ -45,6 +45,7 @@
   background-color: white;
   animation: a 0.3s ease-in-out forwards;
   transform-origin: top center;
+  z-index: 1;
 }
 .main-header .desktop-right .menu-header-container #menu-header .menu-item-has-children .sub-menu li {
   padding: 0.5rem 1rem;
@@ -206,6 +207,13 @@
   border-radius: 50%;
   background-color: white;
   padding: 0.5rem;
+}
+
+#footer {
+  border-top: 2px solid #ccc;
+}
+#footer .footer-bar .widget_block {
+  list-style: none;
 }
 
 .td-none {
