@@ -17,13 +17,17 @@ if (is_home() && !is_front_page()) {
 </div>
 <?php
 } else {
-?>
+    if (is_single()) {
+    ?>
 <div class="single-blog-content mt-5">
     <?php
-        the_title('<h1 class="entry-title fw-bold">', '</h1>');
-        get_template_part('template-parts/components/blog/entry-meta');
-        ?>
+            the_title('<h1 class="entry-title fw-bold">', '</h1>');
+            get_template_part('template-parts/components/blog/entry-meta');
+            ?>
 </div>
 <?php
+    } elseif (is_front_page()) {
+        the_content();
+    }
 }
 ?>

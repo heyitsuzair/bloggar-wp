@@ -9,7 +9,7 @@
 ?>
 
 <?php
-if (!is_single()) {
+if (!is_single() && !is_front_page()) {
 ?>
 <header class="entry-header post-<?php the_ID();  ?>">
     <div class="text-center mx-auto row-post mt-4 post-<?php the_ID(); ?>">
@@ -22,11 +22,13 @@ if (!is_single()) {
 } else {
 ?>
 <?php
-    if (has_post_thumbnail()) {
-        the_post_thumbnail('single-post-thumbnail');
-    } else {
-        echo get_place_holder_image('attachment-single-post-thumbnail');
-    }
+    if (is_single()) :
+        if (has_post_thumbnail()) {
+            the_post_thumbnail('single-post-thumbnail');
+        } else {
+            echo get_place_holder_image('attachment-single-post-thumbnail');
+        }
+    endif;
     ?>
 <?php
 }
