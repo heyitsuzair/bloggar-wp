@@ -26,5 +26,7 @@ class BLOGGAR_WP
         Nav_Menus::get_instance();
         Customizer::get_instance();
         Register_Sidebars::get_instance();
+        Register_Patterns_Category::get_instance();
+        Register_Patterns::get_instance();
     }
 }
