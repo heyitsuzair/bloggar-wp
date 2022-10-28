@@ -89,3 +89,9 @@ function bloggar_numeric_posts_nav()
 
     echo '</ul></div>' . "\n";
 }
+function get_place_holder_image($class)
+{
+    $place_holder = sprintf('<img class="%1$s" src=' . BLOGGAR_WP_DIR_URI . '/assets/img/placeholder.png' . ' alt="Loading..." loading="lazy">', esc_attr($class));
+
+    return $place_holder;
+}

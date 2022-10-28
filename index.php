@@ -36,9 +36,9 @@ get_header();
                 <?php
                         } else {
                         ?>
-                <div class="col-md-4"><?php
-                                                    get_template_part('template-parts/content');
-                                                    ?></div>
+                <div class="col-md-4 col-sm-12 col-xs-12 col-lg-4"><?php
+                                                                                get_template_part('template-parts/content');
+                                                                                ?></div>
                 <?php
                         }
                         ?>
