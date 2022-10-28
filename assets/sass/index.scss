@@ -1,3 +1,8 @@
 @import './variables/index';
 @import './header/index';
 @import './post';
+
+.td-none{
+    text-decoration: none;
+    color: $dark_green;
+}

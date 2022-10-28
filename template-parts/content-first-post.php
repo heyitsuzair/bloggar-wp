@@ -8,7 +8,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('post-content'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('first-post-content'); ?>>
     <?php
     get_template_part('template-parts/components/first-post/entry-header');
     get_template_part('template-parts/components/first-post/entry-content');

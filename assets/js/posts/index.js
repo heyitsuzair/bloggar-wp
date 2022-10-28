@@ -1,8 +1,31 @@
 (function ($) {
   const postContent = $(".post-content");
+  const firstPost = $(".first-post-content");
 
   /**
-   * @eventListener When Mouse Enter The Parent Container Add The Active Class To Image
+   * @firstPostAtTop When Mouse Enter The Parent Container Add The Active Class To Image
+   */
+
+  Array.from(firstPost).forEach((element) => {
+    $(element).on("mouseenter", (e) => {
+      console.log(e.currentTarget.children[0].children[0]);
+      e.currentTarget.children[0].children[0].classList.add("active");
+    });
+  });
+
+  /**
+   * @firstPostAtTop When Mouse Leave The Parent Container Remove The Active Class From Image
+   */
+
+  Array.from(firstPost).forEach((element) => {
+    $(element).on("mouseleave", (e) => {
+      console.log(e.currentTarget.children[0].children[0]);
+      e.currentTarget.children[0].children[0].classList.remove("active");
+    });
+  });
+
+  /**
+   * @mainPosts When Mouse Enter The Parent Container Add The Active Class To Image
    */
 
   Array.from(postContent).forEach((element) => {
@@ -14,7 +37,7 @@
   });
 
   /**
-   * @eventListener When Mouse Leave The Parent Container Remove The Active Class From Image
+   * @mainPosts When Mouse Leave The Parent Container Remove The Active Class From Image
    */
 
   Array.from(postContent).forEach((element) => {
