@@ -198,6 +198,11 @@
   max-width: 800px;
 }
 
+.testimonial .testimonial-img {
+  width: 10%;
+  border-radius: 50%;
+}
+
 .td-none {
   text-decoration: none;
   color: #1b4043;
