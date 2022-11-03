@@ -11,14 +11,26 @@
 get_header();
 ?>
 
-<div class="row row-padding author">
+<?php if (get_theme_mod('basic-author-callout-display') == 'Yes') {
+?>
+<div class="row row-padding author align-items-center">
     <div class="col-6 author-image">
-        <img src="<?php echo BLOGGAR_WP_DIR_URI . '/assets/img/placeholder.png' ?>" width="100" alt="Loading....">
+        <img src="<?php echo get_theme_mod('basic-author-callout-image') ?>" width="100" alt="Loading....">
     </div>
     <div class="col-6 author-content">
-        This is text...
+        <?php
+            $text = get_theme_mod('basic-author-callout-text');
+            if ($text != '') {
+                echo $text;
+            } else {
+                echo 'Edit This By Going To Dashboard -> Appearance -> Customizer -> Author';
+            }
+            ?>
     </div>
 </div>
+<?php
+}
+?>
 
 <main class="container p-5">
     <?php

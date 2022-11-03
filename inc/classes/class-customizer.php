@@ -11,6 +11,7 @@ namespace BLOGGAR_WP\Inc;
 use BLOGGAR_WP\Inc\Traits\Singleton;
 use WP_Customize_Color_Control;
 use WP_Customize_Control;
+use WP_Customize_Image_Control;
 
 class Customizer
 {
@@ -72,18 +73,60 @@ class Customizer
             'priority' => 1,
             'description' => __('Custom Author Section', 'bloggar_wp')
         ]);
-        // Add Setting
+        // Display Setting
         $wp_customize->add_setting('basic-author-callout-display', [
-            'default' => null,
-            'sanizite_callback' => [$this, 'sanitize_custom_option']
+            'default' => 'No',
+            'sanitize_callback' => [$this, 'sanitize_custom_option']
         ]);
-        // Add Control
+        // Display Control
         $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'basic-author-callout-display-control', [
             'label' => "Display This Section?",
             'section' => 'basic-author-section',
             'settings' => 'basic-author-callout-display',
             'type' => 'select',
-            'choices' => ['Yes', 'No']
+            'choices' => ['Yes' => 'Yes', 'No' => 'No']
         ]));
+
+        // Text Setting
+        $wp_customize->add_setting('basic-author-callout-text', [
+            'default' => '',
+            'sanitize_callback' => [$this, 'sanitize_custom_text']
+        ]);
+        // Text Control
+        $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'basic-author-callout-text-control', [
+            'label' => "Author",
+            'section' => 'basic-author-section',
+            'settings' => 'basic-author-callout-text',
+            'type' => 'textarea',
+        ]));
+
+        // Image Setting
+        $wp_customize->add_setting('basic-author-callout-image', [
+            'default' => '',
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'sanitize_callback' => [$this, 'sanitize_custom_url']
+        ]);
+        // Image Control
+        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'basic-author-callout-image-control', [
+            'label' => "Images",
+            'section' => 'basic-author-section',
+            'settings' => 'basic-author-callout-image',
+            'height' => 442,
+            'width' => 310
+        ]));
+    }
+
+    public function sanitize_custom_option($input)
+    {
+        return ($input == 'No') ? 'No' : 'Yes';
+    }
+    public function sanitize_custom_text($input)
+    {
+        return htmlspecialchars($input);
+    }
+    public function sanitize_custom_url($input)
+    {
+        return filter_var($input, FILTER_SANITIZE_URL);
     }
 }
