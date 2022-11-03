@@ -80,5 +80,20 @@ class Testimonial_Customizer
             'type' => 'select',
             'choices' => ['Yes' => 'Yes', 'No' => 'No']
         ]));
+        // Image Setting
+        $wp_customize->add_setting('testimonial-image-setting', [
+            'default' => '',
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'sanitize_callback' => [$this, 'testimonial_sanitize_custom_url']
+        ]);
+        // Image Control
+        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'testimonial-image-control', [
+            'label' => "Image",
+            'section' => 'testimonial-section',
+            'settings' => 'testimonial-image-setting',
+            'height' => 442,
+            'width' => 310
+        ]));
     }
 }
