@@ -10,6 +10,16 @@
 <?php
 get_header();
 ?>
+
+<div class="row row-padding author">
+    <div class="col-6 author-image">
+        <img src="<?php echo BLOGGAR_WP_DIR_URI . '/assets/img/placeholder.png' ?>" width="100" alt="Loading....">
+    </div>
+    <div class="col-6 author-content">
+        This is text...
+    </div>
+</div>
+
 <main class="container p-5">
     <?php
     if (is_home() && !is_front_page()) {
