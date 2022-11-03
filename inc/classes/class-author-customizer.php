@@ -1,7 +1,7 @@
 <?php
 
 /**
- * File To Register Customizer Objects
+ * File To Register Author Customizer Objects
  *
  * @package Bloggar_WP
  */
@@ -9,18 +9,16 @@
 namespace BLOGGAR_WP\Inc;
 
 use BLOGGAR_WP\Inc\Traits\Singleton;
-use WP_Customize_Color_Control;
 use WP_Customize_Control;
 use WP_Customize_Image_Control;
 
-class Customizer
+class Author_Customizer
 {
     use Singleton;
 
 
     protected function __construct()
     {
-
         /**
          * Setting Up Hooks
          */
@@ -38,7 +36,24 @@ class Customizer
          */
         add_action('customize_register', [$this, 'register_customizer_sections_custom']);
     }
-
+    /**
+     * Sanitization ------------------------------
+     */
+    public function author_sanitize_custom_option($input)
+    {
+        return ($input == 'No') ? 'No' : 'Yes';
+    }
+    public function author_sanitize_custom_text($input)
+    {
+        return htmlspecialchars($input);
+    }
+    public function author_sanitize_custom_url($input)
+    {
+        return filter_var($input, FILTER_SANITIZE_URL);
+    }
+    /**
+     * Sanitization ------------------------------
+     */
     public function register_customizer_sections_wp($wp_customize)
     {
         $wp_customize->add_section('custom_css', [
@@ -76,7 +91,7 @@ class Customizer
         // Display Setting
         $wp_customize->add_setting('basic-author-callout-display', [
             'default' => 'No',
-            'sanitize_callback' => [$this, 'sanitize_custom_option']
+            'sanitize_callback' => [$this, 'author_sanitize_custom_option']
         ]);
         // Display Control
         $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'basic-author-callout-display-control', [
@@ -90,7 +105,7 @@ class Customizer
         // Text Setting
         $wp_customize->add_setting('basic-author-callout-text', [
             'default' => '',
-            'sanitize_callback' => [$this, 'sanitize_custom_text']
+            'sanitize_callback' => [$this, 'author_sanitize_custom_text']
         ]);
         // Text Control
         $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'basic-author-callout-text-control', [
@@ -105,7 +120,7 @@ class Customizer
             'default' => '',
             'type' => 'theme_mod',
             'capability' => 'edit_theme_options',
-            'sanitize_callback' => [$this, 'sanitize_custom_url']
+            'sanitize_callback' => [$this, 'author_sanitize_custom_url']
         ]);
         // Image Control
         $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'basic-author-callout-image-control', [
@@ -115,18 +130,5 @@ class Customizer
             'height' => 442,
             'width' => 310
         ]));
-    }
-
-    public function sanitize_custom_option($input)
-    {
-        return ($input == 'No') ? 'No' : 'Yes';
-    }
-    public function sanitize_custom_text($input)
-    {
-        return htmlspecialchars($input);
-    }
-    public function sanitize_custom_url($input)
-    {
-        return filter_var($input, FILTER_SANITIZE_URL);
     }
 }
