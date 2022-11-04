@@ -6,7 +6,7 @@
  * @package Bloggar_WP
  */
 ?>
-<div class="bg-white shadow-sm px-5 p-3">
+<div class="shadow-sm px-5 p-3" id="main-header">
     <div class="main-header d-flex align-items-center justify-content-between">
         <div class="left col-md-4 col-sm-4 col-lg-4 col-xs-4 brand">
             <?php

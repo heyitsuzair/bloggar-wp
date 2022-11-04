@@ -6,7 +6,6 @@
 }
 .main-header .desktop-right .menu-header-container ul li a {
   text-decoration: none;
-  color: black;
   font-weight: 600;
   position: relative;
 }
@@ -86,7 +85,6 @@
 }
 .main-header .mobile-right .menu-header-container ul li a {
   text-decoration: none;
-  color: black;
   font-weight: 600;
   position: relative;
 }
