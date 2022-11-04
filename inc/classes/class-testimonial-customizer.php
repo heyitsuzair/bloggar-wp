@@ -150,5 +150,41 @@ class Testimonial_Customizer
                 ]
             )
         );
+        // Button Icon Setting
+        $wp_customize->add_setting('testimonial-btn-icon-setting', [
+            'default' => 'fa fa-paper-plane',
+            'sanitize_callback' => [$this, 'testimonial_sanitize_custom_text'],
+        ]);
+        // Button Icon Control
+        $wp_customize->add_control(
+            new WP_Customize_Control(
+                $wp_customize,
+                'testimonial-btn-icon-control',
+                [
+                    'label'    => __('Button Icon (Font Awesome Class)', 'bloggar_wp'),
+                    'section'  => 'testimonial-section',
+                    'settings' => 'testimonial-btn-icon-setting',
+                    'type'     => 'text'
+                ]
+            )
+        );
+        // Button Link Setting
+        $wp_customize->add_setting('testimonial-btn-link-setting', [
+            'default' => '#',
+            'sanitize_callback' => [$this, 'testimonial_sanitize_custom_text'],
+        ]);
+        // Button Link Control
+        $wp_customize->add_control(
+            new WP_Customize_Control(
+                $wp_customize,
+                'testimonial-btn-link-control',
+                [
+                    'label'    => __('Button Link', 'bloggar_wp'),
+                    'section'  => 'testimonial-section',
+                    'settings' => 'testimonial-btn-link-setting',
+                    'type'     => 'text'
+                ]
+            )
+        );
     }
 }

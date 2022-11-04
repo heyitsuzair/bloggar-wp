@@ -40,7 +40,8 @@ class Customizer_Styles
 <!--------------------------------------------------- Styling --------------------------------------------------->
 
 <style>
-.testi-btn {
+.testi-btn,
+.testi-btn:hover {
     background-color: <?php echo $testimonial_button_color;
     ?>;
 }
