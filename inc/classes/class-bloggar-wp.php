@@ -26,6 +26,7 @@ class BLOGGAR_WP
         Nav_Menus::get_instance();
         Author_Customizer::get_instance();
         Testimonial_Customizer::get_instance();
+        Colors_Customizer::get_instance();
         Customizer_Styles::get_instance();
         Register_Sidebars::get_instance();
         Register_Patterns_Category::get_instance();

@@ -35,11 +35,17 @@ class Customizer_Styles
     public function register_head_styles()
     {
         $testimonial_button_color = get_theme_mod('testimonial-btn-color-setting');
+        $body_color = get_theme_mod('bloggar-body-color-settings');
 
 ?>
 <!--------------------------------------------------- Styling --------------------------------------------------->
 
 <style>
+body {
+    color: <?php echo $body_color==''? "#000000": $body_color;
+    ?>;
+}
+
 .testi-btn,
 .testi-btn:hover {
     background-color: <?php echo $testimonial_button_color;
