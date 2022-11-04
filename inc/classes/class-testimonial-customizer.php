@@ -41,15 +41,15 @@ class Testimonial_Customizer
     {
         return ($input == 'No') ? 'No' : 'Yes';
     }
-    public function testimonial_sanitize_custom_text($input)
-    {
-        return sanitize_textarea_field($input);
-    }
+    // public function testimonial_sanitize_custom_text($input)
+    // {
+    //     return sanitize_textarea_field($input);
+    // }
     public function testimonial_sanitize_custom_url($input)
     {
         return sanitize_url($input);
     }
-    public function testimonial_sanitize_custom_name($input)
+    public function testimonial_sanitize_custom_text($input)
     {
         return sanitize_text_field($input);
     }
@@ -102,7 +102,7 @@ class Testimonial_Customizer
         // Name Setting
         $wp_customize->add_setting('testimonial-name-setting', [
             'default' => 'Muhammad Uzair',
-            'sanitize_callback' => [$this, 'testimonial_sanitize_custom_name'],
+            'sanitize_callback' => [$this, 'testimonial_sanitize_custom_text'],
         ]);
         // Name Control
         $wp_customize->add_control(
@@ -113,6 +113,39 @@ class Testimonial_Customizer
                     'label'    => __('Name', 'bloggar_wp'),
                     'section'  => 'testimonial-section',
                     'settings' => 'testimonial-name-setting',
+                    'type'     => 'text'
+                ]
+            )
+        );
+        // Button Color Setting
+        $wp_customize->add_setting('testimonial-btn-color-setting', [
+            'default' => '',
+            'capability'        => 'edit_theme_options',
+        ]);
+        // Button Color Control
+        $wp_customize->add_control(new WP_Customize_Color_Control(
+            $wp_customize,
+            'testimonial-btn-color-control',
+            array(
+                'label'    => __('Button Color', 'bloggar_wp'),
+                'section'  => 'testimonial-section',
+                'settings' => 'testimonial-btn-color-setting',
+            )
+        ));
+        // Button Text Setting
+        $wp_customize->add_setting('testimonial-btn-text-setting', [
+            'default' => 'Hire Me',
+            'sanitize_callback' => [$this, 'testimonial_sanitize_custom_text'],
+        ]);
+        // Button Text Control
+        $wp_customize->add_control(
+            new WP_Customize_Control(
+                $wp_customize,
+                'testimonial-btn-text-control',
+                [
+                    'label'    => __('Button Text', 'bloggar_wp'),
+                    'section'  => 'testimonial-section',
+                    'settings' => 'testimonial-btn-text-setting',
                     'type'     => 'text'
                 ]
             )

@@ -15,7 +15,8 @@
     <h5><?php echo get_theme_mod('testimonial-name-setting') == '' ? 'Muhammad Uzair' : get_theme_mod('testimonial-name-setting') ?>
     </h5>
     <a href="<?php echo esc_attr('//www.upwork.com/freelancers/~017b298c253a9c9bcb') ?>"
-        class="text-light fw-bold btn btn-info td-none" target="_blank">Hire Me <i class="fa fa-paper-plane"
-            aria-hidden="true"></i>
+        class="text-light fw-bold btn <?php echo get_theme_mod('testimonial-btn-color-setting') == '' ? ' btn-info' : '' ?> td-none testi-btn"
+        target="_blank"><?php echo get_theme_mod('testimonial-btn-text-setting') == '' ? 'Hire Me' : get_theme_mod('testimonial-btn-text-setting') ?>
+        <i class="fa fa-paper-plane" aria-hidden="true"></i>
     </a>
 </main>
