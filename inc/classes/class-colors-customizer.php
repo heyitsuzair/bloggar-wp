@@ -93,5 +93,20 @@ class Colors_Customizer
                 'settings' => 'bloggar-header-text-color-settings',
             )
         ));
+        // Header Text Hover Color Setting
+        $wp_customize->add_setting('bloggar-header-text-hover-color-settings', [
+            'default' => '#000000',
+            'capability' => 'edit_theme_options',
+        ]);
+        // Header Text Hover Color Control
+        $wp_customize->add_control(new WP_Customize_Color_Control(
+            $wp_customize,
+            'bloggar-header-text-hover-color-control',
+            array(
+                'label'    => __('Header Text Hover Color', 'bloggar_wp'),
+                'section'  => 'bloggar-color-section',
+                'settings' => 'bloggar-header-text-hover-color-settings',
+            )
+        ));
     }
 }
