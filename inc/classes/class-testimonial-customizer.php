@@ -43,11 +43,15 @@ class Testimonial_Customizer
     }
     public function testimonial_sanitize_custom_text($input)
     {
-        return htmlspecialchars($input);
+        return sanitize_textarea_field($input);
     }
     public function testimonial_sanitize_custom_url($input)
     {
-        return filter_var($input, FILTER_SANITIZE_URL);
+        return sanitize_url($input);
+    }
+    public function testimonial_sanitize_custom_name($input)
+    {
+        return sanitize_text_field($input);
     }
     /**
      * Sanitization ------------------------------
@@ -69,7 +73,7 @@ class Testimonial_Customizer
         ]);
         // Display Setting
         $wp_customize->add_setting('testimonial-display-setting', [
-            'default' => 'No',
+            'default' => 'Yes',
             'sanitize_callback' => [$this, 'testimonial_sanitize_custom_option']
         ]);
         // Display Control
@@ -78,7 +82,7 @@ class Testimonial_Customizer
             'section' => 'testimonial-section',
             'settings' => 'testimonial-display-setting',
             'type' => 'select',
-            'choices' => ['Yes' => 'Yes', 'No' => 'No']
+            'choices' => ['Yes' => 'Yes', 'No' => 'No'],
         ]));
         // Image Setting
         $wp_customize->add_setting('testimonial-image-setting', [
@@ -95,5 +99,23 @@ class Testimonial_Customizer
             'height' => 442,
             'width' => 310
         ]));
+        // Name Setting
+        $wp_customize->add_setting('testimonial-name-setting', [
+            'default' => 'Muhammad Uzair',
+            'sanitize_callback' => [$this, 'testimonial_sanitize_custom_name'],
+        ]);
+        // Name Control
+        $wp_customize->add_control(
+            new WP_Customize_Control(
+                $wp_customize,
+                'testimonial-name-control',
+                [
+                    'label'    => __('Name', 'bloggar_wp'),
+                    'section'  => 'testimonial-section',
+                    'settings' => 'testimonial-name-setting',
+                    'type'     => 'text'
+                ]
+            )
+        );
     }
 }

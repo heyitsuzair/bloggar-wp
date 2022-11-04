@@ -45,11 +45,11 @@ class Author_Customizer
     }
     public function author_sanitize_custom_text($input)
     {
-        return htmlspecialchars($input);
+        return sanitize_textarea_field($input);
     }
     public function author_sanitize_custom_url($input)
     {
-        return filter_var($input, FILTER_SANITIZE_URL);
+        return sanitize_url($input);
     }
     /**
      * Sanitization ------------------------------
