@@ -48,6 +48,20 @@ class Colors_Customizer
             'priority' => 3,
             'description' => __('Customize Site Colors', 'bloggar_wp')
         ]);
+        /**
+         * Register Customizations
+         */
+        $this->register_customizations($wp_customize);
+    }
+    public function register_customizations($wp_customize)
+    {
+        $this->register_body_color_customization($wp_customize);
+        $this->register_header_bg_color_customization($wp_customize);
+        $this->register_header_text_color_customization($wp_customize);
+        $this->register_header_text_hover_color_customization($wp_customize);
+    }
+    public function register_body_color_customization($wp_customize)
+    {
         // Body Color Setting
         $wp_customize->add_setting('bloggar-body-color-settings', [
             'default' => '#000000',
@@ -63,6 +77,9 @@ class Colors_Customizer
                 'settings' => 'bloggar-body-color-settings',
             )
         ));
+    }
+    public function register_header_bg_color_customization($wp_customize)
+    {
         // Header Background Color Setting
         $wp_customize->add_setting('bloggar-header-bg-color-settings', [
             'default' => '#FFFFFF',
@@ -78,6 +95,9 @@ class Colors_Customizer
                 'settings' => 'bloggar-header-bg-color-settings',
             )
         ));
+    }
+    public function register_header_text_color_customization($wp_customize)
+    {
         // Header Text Color Setting
         $wp_customize->add_setting('bloggar-header-text-color-settings', [
             'default' => '#000000',
@@ -93,6 +113,9 @@ class Colors_Customizer
                 'settings' => 'bloggar-header-text-color-settings',
             )
         ));
+    }
+    public function register_header_text_hover_color_customization($wp_customize)
+    {
         // Header Text Hover Color Setting
         $wp_customize->add_setting('bloggar-header-text-hover-color-settings', [
             'default' => '#000000',
