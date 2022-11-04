@@ -71,6 +71,23 @@ class Testimonial_Customizer
             'priority' => 2,
             'description' => __('Customize Testimonial Section', 'bloggar_wp')
         ]);
+        /**
+         * Register Customizations
+         */
+        $this->register_customizations($wp_customize);
+    }
+    public function register_customizations($wp_customize)
+    {
+        $this->register_testimonial_display_customization($wp_customize);
+        $this->register_testimonial_image_customization($wp_customize);
+        $this->register_testimonial_name_customization($wp_customize);
+        $this->register_testimonial_btn_color_customization($wp_customize);
+        $this->register_testimonial_btn_text_customization($wp_customize);
+        $this->register_testimonial_btn_icon_customization($wp_customize);
+        $this->register_testimonial_btn_link_customization($wp_customize);
+    }
+    public function register_testimonial_display_customization($wp_customize)
+    {
         // Display Setting
         $wp_customize->add_setting('testimonial-display-setting', [
             'default' => 'Yes',
@@ -84,6 +101,9 @@ class Testimonial_Customizer
             'type' => 'select',
             'choices' => ['Yes' => 'Yes', 'No' => 'No'],
         ]));
+    }
+    public function register_testimonial_image_customization($wp_customize)
+    {
         // Image Setting
         $wp_customize->add_setting('testimonial-image-setting', [
             'default' => '',
@@ -99,6 +119,9 @@ class Testimonial_Customizer
             'height' => 442,
             'width' => 310
         ]));
+    }
+    public function register_testimonial_name_customization($wp_customize)
+    {
         // Name Setting
         $wp_customize->add_setting('testimonial-name-setting', [
             'default' => 'Muhammad Uzair',
@@ -117,6 +140,9 @@ class Testimonial_Customizer
                 ]
             )
         );
+    }
+    public function register_testimonial_btn_color_customization($wp_customize)
+    {
         // Button Color Setting
         $wp_customize->add_setting('testimonial-btn-color-setting', [
             'default' => '',
@@ -132,6 +158,9 @@ class Testimonial_Customizer
                 'settings' => 'testimonial-btn-color-setting',
             )
         ));
+    }
+    public function register_testimonial_btn_text_customization($wp_customize)
+    {
         // Button Text Setting
         $wp_customize->add_setting('testimonial-btn-text-setting', [
             'default' => 'Hire Me',
@@ -150,6 +179,9 @@ class Testimonial_Customizer
                 ]
             )
         );
+    }
+    public function register_testimonial_btn_icon_customization($wp_customize)
+    {
         // Button Icon Setting
         $wp_customize->add_setting('testimonial-btn-icon-setting', [
             'default' => 'fa fa-paper-plane',
@@ -168,6 +200,9 @@ class Testimonial_Customizer
                 ]
             )
         );
+    }
+    public function register_testimonial_btn_link_customization($wp_customize)
+    {
         // Button Link Setting
         $wp_customize->add_setting('testimonial-btn-link-setting', [
             'default' => '#',
